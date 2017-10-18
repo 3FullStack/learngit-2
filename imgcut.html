@@ -1,0 +1,112 @@
+﻿<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+  #content{
+  width:500px;
+  height:500px;
+  border: 10px solid #ccccff;
+  margin:20px auto;
+  position:relative;
+  }
+  #content a {
+  width:70px;
+  height:70px;
+  background:#000000;
+  border:5px solid #ffffff;
+  position:absolute;
+  top:210px;
+  color:#ffffff;
+  font-size:60px;
+  text-align:center;
+  text-decoration:none;
+  line-height:70px;
+  font-weight:bold;
+  filter:alpha(opacity:40);
+  opacity:0.4;
+  }
+  #content a:hover{
+  filter:alpha(opacity:90);
+  opacity:0.9;
+  }
+  #prev{
+  left:10px;
+  }
+  #next{
+  right:10px;
+  }
+  #span1{
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:500px;
+  height:40px;
+  line-height:40px;
+  text-align:center;
+  color:#ffffff;
+  background:#000000;
+  filter:alpha(opacity50);
+  opacity:0.5;
+  }
+  #img1{
+  width:500px;
+  height:500px;
+  }
+  </style>
+  
+ </head>
+ <body>
+  <div id="content">
+  <a id="prev" href="javascript:;"><</a>
+  <a id="next" href="javascript:;">></a>
+  <span id="span1"></span>
+  <img id="img1"/">
+  </div>
+
+  <script>
+  var oPrev = document.getElementById('prev');
+  var oNext = document.getElementById('next');
+  var oImg = document.getElementById('img1');
+  var oSpan = document.getElementById('span1');
+  var oCon = document.getElementById('content');
+
+  var arrUrl = ['images/1.jpg','images/2.jpg','images/3.jpg','images/4.jpg','images/5.jpg','images/6.jpg','images/7.jpg','images/8.jpg'];
+  var num = 0;
+  
+  //初始化
+  function fnTab(){
+  oSpan.innerHTML = num+1+'/'+arrUrl.length;
+  oImg.src = arrUrl[num];
+  }
+  fnTab()
+  oNext.onclick = function (){
+  num++;
+  fnTab()
+  if (num==7){num=-1;}
+  }
+  oPrev.onclick = function (){
+  num--;
+  if (num==-1){num=7;}
+  fnTab()
+  }
+  
+  
+  
+  
+
+
+
+  </script>
+ </body>
+</html>
+<!--
+learn git again
+v2
+v3
+-->
